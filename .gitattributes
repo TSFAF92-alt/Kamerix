@@ -1,0 +1,40 @@
+# ============================================================================
+# Kamerix - .gitattributes
+# Objectif : que Git ne modifie JAMAIS les fichiers de code VBA.
+# ============================================================================
+
+# Par défaut : Git détecte texte / binaire tout seul.
+* text=auto
+
+# Code VBA exporté : Windows-1252 (ANSI) + fins de ligne CRLF, IMPÉRATIF.
+# "-text" = aucune conversion : fichiers restitués octet pour octet.
+*.bas  -text diff
+*.cls  -text diff
+*.frm  -text diff
+*.frx  binary
+
+# Documentation (UTF-8)
+*.md   text eol=lf
+*.txt  text eol=crlf
+
+# Ruban CustomUI, requêtes SQL
+*.xml  text eol=crlf
+*.sql  text eol=crlf
+
+# Fichiers binaires : jamais de conversion ni de diff texte
+*.xlsm   binary
+*.xlsx   binary
+*.xlam   binary
+*.xls    binary
+*.accdb  binary
+*.mdb    binary
+*.docx   binary
+*.doc    binary
+*.pdf    binary
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.bmp    binary
+*.ico    binary
+*.zip    binary
