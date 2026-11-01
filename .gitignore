@@ -1,0 +1,50 @@
+# ============================================================================
+# Kamerix - .gitignore
+# Le dépôt contient les SOURCES (code/, documentation). Les données et les
+# fichiers produits par l'application restent en dehors.
+# ============================================================================
+
+# --- Fichiers de verrouillage Office / Access (classeur ou base ouverts) ---
+~$*
+*.laccdb
+*.ldb
+
+# --- Base de données : données réelles + fichier protégé par mot de passe ---
+# Elle est recréée par TestDatabaseCreation (schéma dans modKamerixSchema).
+Database/
+*.accdb
+*.mdb
+
+# --- Fichiers produits par l'application (à côté du classeur) ---
+# PDF des factures / reçus / remboursements
+Documents/
+# Logo copié par le paramétrage de l'entreprise
+Ressources/
+# Sauvegardes automatiques de ZmodImportTool (ReplaceKamerixModules)
+Backup_VBA_*/
+
+# --- Classeurs Excel ---
+# Le classeur est binaire : la source de vérité est le dossier code/
+# (les userforms sont générés par ZmodFormBuilder).
+*.xlsm
+*.xlam
+*.xlsx
+*.xls
+
+# --- Archives de livraison et temporaires ---
+*.zip
+*.bundle
+*.bak
+*.tmp
+*.log
+
+# --- Système Windows / macOS ---
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# --- Éditeurs ---
+.vscode/
+*.code-workspace
